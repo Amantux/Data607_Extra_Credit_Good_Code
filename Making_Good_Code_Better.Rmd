@@ -1,8 +1,11 @@
 ---
-title: "R Notebook"
-output: html_notebook
+title:  Making Good Code Better
+author: Alex Moyse
+output: 
+  html_document:
+    toc: true
+    toc_float: true
 ---
-
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 ```{r}
@@ -56,12 +59,12 @@ Now lets calculate the call percentage.
 length <- NROW(sandy_call_breakdown)
 sandy_call_breakdown$Call_percentage = 0
 for (row_number in 1:length){
-  print(row_number)
   sandy_call_breakdown$Call_percentage[row_number] = sandy_call_breakdown$Call_Count[row_number]/(call_count_year$Call_Count[call_count_year$date==sandy_call_breakdown$date[row_number]])
 }
 head(sandy_call_breakdown,20)
 ```
 
+<H1> Data Filtering </H1>
 Now lets grab just the top 5 Departments by year.
 
 ```{r}
